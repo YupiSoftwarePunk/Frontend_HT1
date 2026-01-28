@@ -1,8 +1,101 @@
+header {
+    background-color: white;
+    color: var(--light);
+    padding: 18px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid black(201, 167, 105, 0.2);
+    transition: all 0.3s ease;
+    }
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a,
+header nav {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    text-decoration: none; 
+    color: black;
+    font-family: serif; 
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+h1[hidden] {
+    display: none; 
+}
+
+/* section {
+    position: relative; 
+    width: 1240px; 
+    height: 550px;
+} 
+
+section h2,
+section span {
+    position: absolute; 
+    color: white; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+}
+
+section h2 {
+    bottom: 50px;
+    left: 20px;
+}
+
+section span {
+    bottom: 20px;
+    left: 20px;
+    max-width: 600px; 
+} */
+
 h1 {
-    text-align:center;color:white
+    text-align:center;
+    color:white
+    
+}
+
+h2 {
+    align-items: center;
+    color: black;
 }
 
 h3
 {
-    text-align:center;color:white;
+    text-align:center;
+    color:white;
+}
+
+button::after {
+    color: azure;
+    text-align: center;
+    content: "→";
+    background-color: orange;
 }
