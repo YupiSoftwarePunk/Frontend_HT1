@@ -1,12 +1,15 @@
 :root {
     --accent: #ff7a45; 
     --text-dark: #333;
+    --font-main: "Montserrat", sans-serif;
+    --font-classic: "Times New Roman", serif;
 }
 
 body {
     margin: 0;
     padding-top: 100px; 
-    font-family: "Times New Roman", serif;
+    background-color: #f9f9f9;
+    font-family: var(--font-main);
     background-color: #f9f9f9;
 }
 
@@ -23,23 +26,6 @@ header {
 
 header img {
     margin-bottom: 15px;
-}
-
-.header-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header a,
-header nav {
-    display: block;
-    margin-bottom: 20px;
-}
-
-.main-nav {
-    display: flex;
-    justify-content: center;
 }
 
 .nav-list {
@@ -60,6 +46,12 @@ header nav {
     font-size: 13px;
     letter-spacing: 1px;
     text-transform: uppercase;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent); 
+    opacity: 0.8;
 }
 
 main > section:first-of-type {
@@ -76,6 +68,23 @@ main > section:first-of-type {
     text-align: center;
 }
 
+main > section:first-of-type::before {
+    content: "";
+    position: absolute;
+    top: 130px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: var(--accent);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    border-radius: 50%;
+    z-index: 2;
+}
+
 main > section:first-of-type img {
     position: absolute;
     top: 0;
@@ -84,15 +93,18 @@ main > section:first-of-type img {
     height: 100%;
     object-fit: cover;
     z-index: -1;
+    margin: 0 0 30px; 
+    letter-spacing: 5px;
     filter: brightness(0.7);
 }
 
 main > section:first-of-type h2 {
+    font-family: var(--font-main);
     font-size: 56px;
     color: white !important;
     text-transform: uppercase;
     font-weight: 300;
-    margin: 0 0 20px;
+    margin: 0;
     letter-spacing: 5px;
 }
 
@@ -100,6 +112,8 @@ main > section:first-of-type span {
     max-width: 600px;
     font-size: 16px;
     line-height: 1.6;
+    display: block;
+    margin-top: 20px;
 }
 
 main > div {
@@ -122,6 +136,9 @@ article img {
 }
 
 article h2 {
+    font-family: var(--font-classic);
+    font-weight: bolder;
+    text-transform: none;
     text-align: left;
     font-size: 20px;
     margin: 15px 0;
@@ -167,7 +184,7 @@ main > section:last-of-type::after {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 60px; /* Высота белой полосы как на макете */
+    height: 60px;
     background: white;
     z-index: 2;
 }
@@ -225,6 +242,10 @@ button {
     gap: 10px;
 }
 
+button:hover {
+    background-color: #954224;
+}
+
 button::after {
     content: "→";
     font-size: 18px;
@@ -255,6 +276,18 @@ address {
     font-style: normal;
 }
 
+address a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;  
+    height: 35px;
+    background-color: white;
+    text-decoration: none;
+}
+
 address img {
-    filter: brightness(0) invert(1); /* Делает иконки соцсетей белыми */
+    width: 18px;
+    height: auto;
+    filter: brightness(0) saturate(100%) invert(27%) sepia(0%) saturate(12%) hue-rotate(189deg) brightness(93%) contrast(85%);
 }
